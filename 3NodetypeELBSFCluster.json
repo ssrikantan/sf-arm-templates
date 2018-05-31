@@ -1294,6 +1294,11 @@
             "type": "Microsoft.Compute/virtualMachineScaleSets",
             "name": "[variables('vmNodeType0Name')]",
             "location": "[variables('computeLocation')]",
+			  "identity" : {
+
+                "type" : "SystemAssigned"
+
+            },
             "dependsOn": [
                 "[concat('Microsoft.Network/loadBalancers/', concat('LB','-', parameters('clusterName'),'-',variables('vmNodeType0Name')))]",
                 "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]",
@@ -3079,6 +3084,11 @@
             "type": "Microsoft.Compute/virtualMachineScaleSets",
             "name": "[variables('vmNodeType2Name')]",
             "location": "[variables('computeLocation')]",
+			  "identity" : {
+
+                "type" : "SystemAssigned"
+
+            },
             "dependsOn": [
                 "[concat('Microsoft.Network/loadBalancers/', concat('LB','-', parameters('clusterName'),'-',variables('vmNodeType2Name')))]",
                 "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]",
